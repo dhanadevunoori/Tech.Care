@@ -1,0 +1,613 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: 'Manrope', sans-serif;
+  background: #F6F7F8;
+  color: #072635;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  padding: 18px;
+}
+
+/* NAVBAR */
+
+.navbar {
+  width: 100%;
+  height: 72px;
+  background: #fff;
+  border-radius: 70px;
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 32px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #072635;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  padding: 11px 16px;
+  border-radius: 41px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links a.active {
+  background: #01F0D0;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-doctor-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.doctor-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.doctor-role {
+  font-size: 12px;
+  color: #707070;
+}
+
+.nav-divider {
+  width: 1px;
+  height: 36px;
+  background: #EDEDED;
+}
+
+/* DASHBOARD */
+
+.dashboard {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 367px 1fr 367px;
+  gap: 32px;
+
+  align-items: start;
+}
+
+/* COMMON CARD */
+
+.card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* LEFT PANEL */
+
+.patients-panel {
+  height: 1054px;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.patients-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 34px;
+}
+
+.patients-header h2 {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+/* PATIENT LIST */
+
+#patient-list {
+  list-style: none;
+
+  height: 930px;
+
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  padding-right: 0;
+}
+
+/* FAKE XD SCROLLBAR */
+
+.patients-panel::before {
+  content: "";
+  position: absolute;
+
+  right: 8px;
+  top: 120px;
+
+  width: 4px;
+  height: 520px;
+
+  background: #E3E4E6;
+  border-radius: 999px;
+
+  z-index: 10;
+}
+
+.patients-panel::after {
+  content: "";
+  position: absolute;
+
+  right: 8px;
+  top: 145px;
+
+  width: 4px;
+  height: 80px;
+
+  background: #072635;
+  border-radius: 999px;
+
+  z-index: 11;
+}
+
+/* PATIENT ITEMS */
+
+.patient-item {
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 16px;
+
+  cursor: pointer;
+}
+
+.patient-item.active {
+  background: #D8FCF7;
+}
+
+.patient-item img {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.patient-info {
+  flex: 1;
+}
+
+.patient-name {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.patient-meta {
+  font-size: 14px;
+  color: #707070;
+  margin-top: 4px;
+}
+
+.more-btn {
+  border: none;
+  background: transparent;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+/* CENTER PANEL */
+
+.centre-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.centre-panel > .card {
+  padding: 20px;
+}
+
+.centre-panel h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+/* BLOOD PRESSURE */
+
+.bp-wrapper {
+  background: #F4F0FE;
+  border-radius: 12px;
+
+  display: flex;
+
+  padding: 16px;
+  min-height: 298px;
+}
+
+.bp-chart-area {
+  flex: 1;
+}
+
+.bp-chart-top {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.bp-chart-top h3 {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.period-btn {
+  font-size: 14px;
+}
+
+.bp-stats {
+  width: 210px;
+  padding-left: 20px;
+}
+
+.bp-label {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.bp-value {
+  font-size: 30px;
+  font-weight: 800;
+
+  margin: 8px 0;
+}
+
+.bp-trend {
+  font-size: 14px;
+}
+
+.bp-stats hr {
+  border: none;
+  border-top: 1px solid #CBC8D4;
+
+  margin: 16px 0;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+
+  display: inline-block;
+
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.systolic-dot {
+  background: #E66FD2;
+}
+
+.diastolic-dot {
+  background: #8C6FE6;
+}
+
+/* VITALS */
+
+.vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 21px;
+}
+
+.vital-card {
+  height: 242px;
+
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.vital-card.blue {
+  background: #E0F3FA;
+}
+
+.vital-card.pink {
+  background: #FFE6E9;
+}
+
+.vital-card.rose {
+  background: #FFE6F1;
+}
+
+.vital-icon-wrap {
+  width: 96px;
+  height: 96px;
+
+  margin-bottom: 16px;
+}
+
+.vital-icon-wrap svg {
+  width: 96px;
+  height: 96px;
+}
+
+.vital-label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.vital-value {
+  font-size: 30px;
+  font-weight: 800;
+
+  margin: 4px 0 10px;
+}
+
+.vital-status {
+  font-size: 14px;
+}
+
+/* DIAGNOSTIC */
+
+.diag-card {
+  height: 349px;
+  overflow: hidden;
+}
+
+.diag-card h2 {
+  font-size: 24px;
+  font-weight: 800;
+
+  margin-bottom: 40px;
+}
+
+.diag-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.diag-table thead th {
+  background: #F6F7F8;
+
+  padding: 14px;
+
+  text-align: left;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.diag-body-scroll {
+  max-height: 170px;
+  overflow-y: auto;
+}
+
+.diag-body-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.diag-body-scroll::-webkit-scrollbar-track {
+  background: #E3E4E6;
+  border-radius: 20px;
+}
+
+.diag-body-scroll::-webkit-scrollbar-thumb {
+  background: #072635;
+  border-radius: 20px;
+}
+
+.diag-body-scroll table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.diag-body-scroll td {
+  padding: 14px;
+
+  border-bottom: 1px solid #F0F0F0;
+
+  font-size: 14px;
+}
+
+/* RIGHT PANEL */
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* RIGHT PROFILE EXACT */
+
+.profile-card {
+  height: 740px;
+  text-align: center;
+  padding: 24px 20px 0;
+  overflow: hidden;
+}
+
+.profile-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+
+.profile-card h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 32px;
+}
+
+.profile-info {
+  list-style: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 0 16px;
+}
+
+.profile-info li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.info-icon {
+  width: 42px;
+  height: 42px;
+  background: #F6F7F8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-label {
+  font-size: 14px;
+  color: #072635;
+  font-weight: 500;
+}
+
+.info-text strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+/* HIDE BUTTON */
+
+.show-all-btn {
+  display: none;
+}
+
+/* LAB CARD */
+
+.lab-card {
+  height: 296px;
+
+  padding: 20px 16px 20px 20px;
+
+  overflow: hidden;
+}
+
+.lab-card h2 {
+  font-size: 24px;
+  font-weight: 800;
+
+  margin-bottom: 18px;
+}
+
+/* LAB SCROLL AREA */
+
+#lab-list {
+  list-style: none;
+
+  height: 205px;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  padding-right: 6px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* LAB SCROLLBAR */
+
+#lab-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+#lab-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#lab-list::-webkit-scrollbar-thumb {
+  background: #072635;
+  border-radius: 999px;
+}
+
+#lab-list::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* LAB ITEMS */
+
+.lab-item {
+  min-height: 40px;
+
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+}
+
+.lab-item:nth-child(even) {
+  background: #F6F7F8;
+}
+
+/* DOWNLOAD BUTTON */
+
+.lab-download {
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
