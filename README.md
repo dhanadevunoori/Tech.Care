@@ -97,8 +97,8 @@ Or use VS Code Live Server for hot reload.
 
 ## 📸 Screenshot
 
-<!-- Replace this with your actual screenshot after visiting the live demo -->
-> 🖼️ ![Tech.Care Dashboard](screenshot.png)
+
+> ![Tech.Care Dashboard](screenshot.png)
 
 ---
 
